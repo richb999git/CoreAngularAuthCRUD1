@@ -1,0 +1,13 @@
+<h1 id="tableLabel">Advert Type Detail display</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!advertType"><em>Loading...advert details</em></p>
+
+<div *ngIf="advertType">
+  <p>{{ advertType.id }}</p>
+  <p>{{ advertType.type }}</p>
+  <p>{{ advertType.typeDescription }}</p>
+  <button (click)="deleteType(advertType.id)">Delete</button>
+</div>
+

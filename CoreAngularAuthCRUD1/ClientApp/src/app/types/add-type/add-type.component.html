@@ -1,0 +1,48 @@
+<h2>Add Advert Type</h2>
+<p>Template form. Not reactive form</p>
+
+<div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+
+  <p *ngIf="errorMsg=='Server error'">{{ errorMsg }}</p>
+
+  <ul *ngIf="errorMsg!='Server error'">
+    <li *ngFor="let error of errorMsg.Type">
+      {{ error }}
+    </li>
+    <li *ngFor="let error of errorMsg.TypeDescription">
+      {{ error }}
+    </li>
+  </ul>
+
+</div>
+
+<form #typeForm="ngForm" (ngSubmit)="onSubmit(typeForm)">
+<!--<form #typeForm="ngForm" (ngSubmit)="addType()">-->
+
+  <div class="form-group">
+    <label for="exampleInputType">Type</label>
+    <input type="text" class="form-control" id="type" 
+           [ngClass]="(type.invalid && (type.dirty || type.touched))?'text-danger is-invalid':''"
+           placeholder="Enter Type" name="type"  minlength="2" required
+           [(ngModel)]="model.type" #type="ngModel">
+    <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert alert-danger mt-2">
+      <div *ngIf="type.errors.required">Type is required</div>
+      <div *ngIf="type.errors.minlength">Name must be at least 2 characters long.</div>
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputTypeDescription">Type Description</label>
+    <input type="text" class="form-control" id="typeDescription" aria-describedby="typeHelpDescription"
+           [ngClass]="(typeDescription.invalid && (typeDescription.dirty || typeDescription.touched))?'text-danger is-invalid':''"
+           name="typeDescription" placeholder="Enter Type Description"  minlength="3" required
+           [(ngModel)]="model.typeDescription" #typeDescription="ngModel">
+    <small *ngIf="typeDescription.errors?.required && (typeDescription.dirty || typeDescription.touched)" class="text-danger">Type Description is required. </small>
+    <small *ngIf="typeDescription.errors?.minlength" class="text-danger">Description must be at least 3 characters long.</small>
+
+  </div>
+
+  <button [disabled]="!typeForm.valid" type="submit" class="btn btn-primary">Submit</button>
+
+</form>

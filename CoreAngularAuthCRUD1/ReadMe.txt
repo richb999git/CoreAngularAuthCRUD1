@@ -15,3 +15,19 @@ Then "Remove-Migration" to go back to previous migration. If you've done several
 
 All the views and code is hidden initially. To unhide it Add a scaffolding item and choose Identity then tick whatever you need to unhide.
 You can then edit views and c# files as required.
+
+
+Adding ngx-bootstrap:
+
+Best way is to:
+
+ng add ngx-bootstrap
+
+Or
+
+ng add ngx-bootstrap --component xxxxx
+
+It will fail to run because the bootstrap css file is already in the angular.json file so just delete the line that was there originally (keep ngx add version)
+
+No need to update npm packages if you don't want to.
+

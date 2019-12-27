@@ -33,6 +33,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20191022191647_InitialAdvertsCreate.cs" />
+    <Compile Remove="Data\Migrations\20191022191647_InitialAdvertsCreate.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191022192041_InitialAdvertTypesCreate.cs" />
+    <Compile Remove="Data\Migrations\20191022192041_InitialAdvertTypesCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\src\app\types\_services\" />
     <Folder Include="Migrations\" />
   </ItemGroup>

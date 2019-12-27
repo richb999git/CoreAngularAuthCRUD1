@@ -19,6 +19,10 @@ import { AddTypeComponent } from './types/add-type/add-type.component';
 import { UpdateTypeComponent } from './types/update-type/update-type.component';
 import { AdvertTypesService } from './types/_services/advert-types.service';
 import { BoatsComponent } from './boats/boats.component';
+import { TestPipePipe } from '../pipes/test-pipe.pipe';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 // Types, Types - declarations, routes
 @NgModule({
@@ -33,7 +37,8 @@ import { BoatsComponent } from './boats/boats.component';
     DeleteTypeComponent,
     AddTypeComponent,
     UpdateTypeComponent,
-    BoatsComponent
+    BoatsComponent,
+    TestPipePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -49,7 +54,10 @@ import { BoatsComponent } from './boats/boats.component';
         { path: 'delete-type/:id', component: DeleteTypeComponent },
         { path: 'add-type', component: AddTypeComponent },
         { path: 'update-type/:id', component: UpdateTypeComponent },
-    ])
+    ]),
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule,
+    ModalModule.forRoot()
   ],
   providers: [
       { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },

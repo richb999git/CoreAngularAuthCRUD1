@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output, Input} from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
+
 
 @Component({
-  selector: 'app-counter-component',
+  selector: 'app-counter',
   templateUrl: './counter.component.html'
 })
 export class CounterComponent {

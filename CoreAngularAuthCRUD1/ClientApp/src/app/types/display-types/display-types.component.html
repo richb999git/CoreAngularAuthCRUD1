@@ -36,6 +36,6 @@
 
 <!--parent to child is first part @Input. Child to parent is second part (emit) @Output-->
 
-<app-counter-component *ngIf="advertTypes" [valuesFromDisplayTypes]="advertTypes[0]" (currentCountCopy)="passCurrentCount($event)"></app-counter-component>
+<app-counter *ngIf="advertTypes" [valuesFromDisplayTypes]="advertTypes[0]" (currentCountCopy)="passCurrentCount($event)"></app-counter>
 
 <app-boats *ngIf="advertTypes" [valuesFromDisplayTypes]="advertTypes[1]" [count]="count" ></app-boats>

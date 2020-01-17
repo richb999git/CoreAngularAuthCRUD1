@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestPipePipe } from '../../../src/pipes/test-pipe.pipe'; // added
 import { CounterComponent } from './counter.component';
 
 describe('CounterComponent', () => {
@@ -8,7 +8,7 @@ describe('CounterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CounterComponent ]
+      declarations: [CounterComponent, TestPipePipe] // added TestPipePipe
     })
     .compileComponents();
   }));

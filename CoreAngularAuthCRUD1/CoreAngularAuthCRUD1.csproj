@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\dist\" />
     <Folder Include="ClientApp\src\app\types\_services\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
@@ -71,5 +72,7 @@
       </ResolvedFileToPublish>
     </ItemGroup>
   </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

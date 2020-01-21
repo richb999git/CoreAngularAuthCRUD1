@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AddTypeComponent implements OnInit {
     private model: Model2 = { type: "", typeDescription: "" };
     public errorMsg;
+    public dummyH: number;
 
     constructor(private advertTypesService: AdvertTypesService, private router: Router) { }
 
@@ -44,6 +45,14 @@ export class AddTypeComponent implements OnInit {
                 this.errorMsg = "Server error";
             }              
         });
+    }
+
+    dummyInc(a) {
+      return a + 1;
+    }
+
+    dummyDouble() {
+      this.dummyH *= 2;
     }
 
 }

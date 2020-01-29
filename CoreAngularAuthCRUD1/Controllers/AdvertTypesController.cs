@@ -46,7 +46,8 @@ namespace CoreAngularAuthCRUD1.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAdvertTypes(int id, AdvertTypes advertTypes)
+        //was: public async Task<IActionResult> PutAdvertTypes(int id, AdvertTypes advertTypes)
+        public async Task<ActionResult<AdvertTypes>> PutAdvertTypes(int id, AdvertTypes advertTypes)
         {
             if (id != advertTypes.Id)
             {
@@ -58,6 +59,7 @@ namespace CoreAngularAuthCRUD1.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -71,7 +73,8 @@ namespace CoreAngularAuthCRUD1.Controllers
                 }
             }
 
-            return NoContent();
+            return advertTypes;
+            //return NoContent(); // was
         }
 
         // POST: api/AdvertTypes
